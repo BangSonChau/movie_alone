@@ -1,0 +1,23 @@
+@import "/src/mixin/index.scss";
+
+.carousel {
+  margin-bottom: 30px;
+  position: relative;
+
+  h2 {
+    color: white;
+    font-weight: 400;
+    margin-bottom: 15px;
+  }
+
+  .genre-tag {
+    display: flex;
+    gap: 5px;
+    justify-content: right;
+    flex-wrap: wrap-reverse;
+    position: absolute;
+    bottom: 15px;
+    right: 5px;
+    width: 150px;
+  }
+}

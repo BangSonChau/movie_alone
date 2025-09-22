@@ -1,0 +1,285 @@
+@import "/src/mixin/index.scss";
+
+.movie-detail {
+  &__banner {
+    position: relative;
+
+    .bg-blur {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      filter: opacity(0.3);
+    }
+
+    .content {
+      position: absolute;
+      background-color: rgba(4, 21, 45, 0.8);
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      padding: 150px 10px;
+      z-index: 10;
+
+      &__inside {
+        display: flex;
+        gap: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        .left {
+          width: 350px;
+          flex-shrink: 0; // ko bị co lại, ko thay đổi kích thước khi bị lấn
+
+          @include sp {
+            width: 100%;
+          }
+
+          img {
+            width: 100%;
+            border-radius: 12px;
+          }
+        }
+
+        .right {
+          flex: 1;
+          color: white;
+
+          h1 {
+            font-size: 40px;
+            font-weight: 400;
+
+            @include sp {
+              font-size: 28px;
+            }
+          }
+
+          .tagLine {
+            font-size: 20px;
+            opacity: 0.5;
+            margin-bottom: 10px;
+
+            @include sp {
+              font-size: 16px;
+            }
+          }
+
+          .row {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 35px;
+
+            .circleRating {
+              width: 100px;
+              background-color: #04152d;
+              border-radius: 50%;
+              padding: 2px;
+              margin-top: 20px;
+              margin-bottom: 20px;
+              .CircularProgressbar-text {
+                font-size: 34px;
+                font-weight: 700;
+                transform: translate(-25px, 14px);
+                fill: #fff;
+              }
+              .CircularProgressbar-trail {
+                stroke: transparent;
+              }
+
+              @include sp {
+                width: 70px;
+              }
+            }
+
+            .circle {
+              stroke: #ffffff; // mặc định màu trắng
+              stroke-dasharray: 650;
+              stroke-dashoffset: 0; // hiện trọn vẹn từ đầu
+              opacity: 1;
+              transition: stroke 0.35s ease, stroke-dashoffset 0.7s linear;
+              stroke-width: 6;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke-miterlimit: 10;
+            }
+
+            .playBut {
+              position: relative;
+              border: none;
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 30px;
+              transition: transform 0.2s ease;
+              cursor: pointer;
+
+              svg {
+                @include sp {
+                  width: 70px;
+                }
+              }
+
+              p {
+                font-size: 25px;
+                color: #fff;
+                text-decoration: none;
+
+                @include sp {
+                  font-size: 20px;
+                }
+              }
+
+              .triangle {
+                stroke-width: 6;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-miterlimit: 10;
+                transition: stroke 0.35s ease, stroke-dashoffset 0.7s linear,
+                  transform 0.7s ease-in-out;
+                stroke-dasharray: 240;
+                stroke-dashoffset: 480;
+                stroke: #fff; // tam giác mặc định trắng
+                transform: translateY(0);
+              }
+
+              &:hover {
+                .triangle {
+                  stroke-dashoffset: 0;
+                  opacity: 1;
+                  stroke: #f70f4d;
+                  animation: nudge 0.7s ease-in-out;
+                }
+
+                .circle {
+                  stroke: #f70f4d;
+                  stroke-dashoffset: -650; // chạy "xuôi" khi hover
+                  opacity: 1;
+                  transition: stroke 0.35s ease, stroke-dashoffset 0.7s linear;
+                }
+
+                p {
+                  color: #f70f4d;
+                  transition: color 0.4s ease;
+                }
+              }
+            }
+
+            @keyframes nudge {
+              0% {
+                transform: translateX(0);
+              }
+              30% {
+                transform: translateX(-5px);
+              }
+              50% {
+                transform: translateX(5px);
+              }
+              70% {
+                transform: translateX(-2px);
+              }
+              100% {
+                transform: translateX(0);
+              }
+            }
+          }
+
+          h3 {
+            font-size: 25px;
+            margin-bottom: 20px;
+            font-weight: 500;
+
+            @include sp {
+              font-size: 24px;
+            }
+          }
+
+          p {
+            font-size: 16px;
+            text-align: justify;
+            line-height: 35px;
+
+            @include sp {
+              line-height: 24px;
+            }
+          }
+
+          .box {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            gap: 20px;
+            padding: 20px 0;
+
+            @include tablet {
+              flex-wrap: wrap;
+            }
+
+            @include sp {
+              flex-wrap: wrap;
+            }
+
+            .info {
+              display: flex;
+              // flex-flow: row wrap;
+
+              .label {
+                margin-right: 8px;
+                font-weight: bold;
+              }
+
+              .value {
+                opacity: 0.5;
+              }
+            }
+          }
+        }
+
+        @include sp {
+          flex-wrap: wrap;
+        }
+      }
+
+      .container {
+        h2 {
+          color: #fff;
+          font-size: 24px;
+          margin-bottom: 25px;
+          margin-top: 25px;
+          font-weight: 300;
+          z-index: 10;
+        }
+
+        &__title {
+          margin-top: 150px;
+        }
+
+        .top-cast-section {
+          .swiper-wrapper {
+            @include sp {
+              gap: 20px;
+            }
+          }
+        }
+
+        .video-section {
+          margin-bottom: 50px;
+        }
+      }
+    }
+
+    .overlay {
+      position: absolute;
+      height: 100px;
+      background: linear-gradient(
+        180deg,
+        rgba(4, 21, 45, 0) 0%,
+        #04152d 79.17%
+      );
+      bottom: 0px;
+      left: 0;
+      right: 0;
+      z-index: 1;
+    }
+  }
+}

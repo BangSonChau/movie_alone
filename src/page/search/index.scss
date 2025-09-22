@@ -1,0 +1,46 @@
+@import "/src/mixin/index.scss";
+
+.search-page {
+  color: #fff;
+  padding-top: 100px;
+
+  h2 {
+    font-weight: 500;
+    margin-bottom: 30px;
+    font-size: 24px;
+  }
+
+  .movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 50px;
+
+    @include sp {
+      gap: 10px;
+    }
+
+    .movie-card {
+      width: calc(100% / 5 - 20px);
+
+      @include tablet {
+        width: calc(100% / 4 - 18.75px);
+      }
+
+      @include sp {
+        width: calc(100% / 2 - 12.5px);
+      }
+
+      .genre-tag {
+        display: flex;
+        gap: 5px;
+        justify-content: right;
+        flex-wrap: wrap-reverse;
+        position: absolute;
+        bottom: 15px;
+        right: 5px;
+        width: 150px;
+      }
+    }
+  }
+}

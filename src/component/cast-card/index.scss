@@ -1,0 +1,51 @@
+@import "/src/mixin/index.scss";
+
+.cast-card {
+  width: 180px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include sp {
+    width: 120px;
+  }
+
+  &__image {
+    margin-bottom: 25px;
+
+    img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+
+      @include sp {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  }
+
+  &__info {
+    text-align: center;
+    &--name {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 24px;
+      color: white;
+
+      @include sp {
+        font-size: 14px;
+      }
+    }
+
+    &--subname {
+      font-size: 14px;
+      color: white;
+      opacity: 0.7;
+    }
+  }
+}

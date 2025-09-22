@@ -1,0 +1,53 @@
+@import "/src/mixin/index.scss";
+
+.movie-card {
+  &__tag {
+    position: relative;
+    margin-bottom: 30px;
+    img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .circleRating {
+      position: absolute;
+      bottom: -20px;
+      left: 10px;
+      width: 65px;
+      background-color: white;
+      border-radius: 50%;
+      padding: 2px;
+      margin-top: 20px;
+      .CircularProgressbar {
+        transform: translateY(3px);
+      }
+      .CircularProgressbar-text {
+        font-size: 34px;
+        font-weight: 500;
+        transform: translate(-20px, 10px);
+        fill: black;
+      }
+      .CircularProgressbar-trail {
+        stroke: transparent;
+      }
+    }
+  }
+
+  h3 {
+    font-size: 22px;
+    color: white;
+    line-height: 24px;
+    font-weight: 500;
+    margin: 8px 0px;
+
+    @include sp {
+      font-size: 16px;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    opacity: 0.5;
+    color: white;
+  }
+}
