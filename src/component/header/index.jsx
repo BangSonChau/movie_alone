@@ -5,7 +5,7 @@ import { HiOutlineBars4 } from "react-icons/hi2";
 import { AiOutlineClose } from "react-icons/ai";
 import { useEffect, useState } from "react";
 
-function Header() {
+function Header({ setIsHeaderActive }) {
   const [openMenu, setOpenMenu] = useState(false);
   const [openSearch, setOpenSearch] = useState(false);
   const [keyWord, setKeyWord] = useState("");
@@ -80,10 +80,11 @@ function Header() {
             onChange={(e) => setKeyWord(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
-                e.preventDefault();
                 handleSearch();
               }
             }}
+            onFocus={() => setIsHeaderActive(true)}   // khi bật
+            onBlur={() => setIsHeaderActive(false)}   // khi rời
           />
           <AiOutlineClose onClick={handleCloseSearch}></AiOutlineClose>
         </div>

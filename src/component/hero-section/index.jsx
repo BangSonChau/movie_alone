@@ -3,7 +3,7 @@ import "./index.scss";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function HeroSection({ url }) {
+function HeroSection({ url, disableInput }) {
   const [imgUrl, setImgUrl] = useState([]);
   const [selectedImages, setSelectedImages] = useState([]);
   const [keyWord, setKeyWord] = useState("");
@@ -55,6 +55,7 @@ function HeroSection({ url }) {
                 handleSearch();
               }
             }}
+            disabled={disableInput}
           />
           <button onClick={() => handleSearch()}>Search</button>
         </div>

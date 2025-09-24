@@ -1,9 +1,12 @@
+import { useState } from "react";
 import Carousel from "../../component/carousel";
 import Container from "../../component/container";
 import Header from "../../component/header";
 import HeroSection from "../../component/hero-section";
 
 function Home() {
+  const [isHeaderActive, setIsHeaderActive] = useState(false);
+  
   return (
     <div>
       <Header />
