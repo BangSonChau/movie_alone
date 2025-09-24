@@ -19,7 +19,7 @@ function Search() {
 
   useEffect(() => {
     fetchSearchMovies();
-  }, []);
+  }, [keyWord]);
 
   return (
     <div>
