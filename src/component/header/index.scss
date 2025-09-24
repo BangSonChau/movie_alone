@@ -39,6 +39,16 @@
         font-weight: 500;
         cursor: pointer;
 
+        a {
+          font-size: 18px;
+          font-weight: 500;
+          color: #fff;
+          &:hover {
+            color: #da2f68;
+            transition: 0.15s all ease;
+          }
+        }
+
         &:hover {
           color: #da2f68;
           transition: 0.15s all ease;
@@ -94,13 +104,16 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 30px;
-      font-size: 18px;
+      font-size: 14px;
       transform: translateY(-200px);
       z-index: 99;
       input {
         flex: 1;
         outline: none;
         border: none;
+        &::placeholder {
+          font-size: 15px;
+        }
       }
 
       svg {
@@ -117,6 +130,5 @@
       transform: translateY(-200px);
       transition: 0.35s all ease;
     }
-    
   }
 }

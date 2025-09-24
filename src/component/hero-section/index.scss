@@ -1,6 +1,12 @@
 @import "/src/mixin/index.scss";
 
 .hero-section {
+  height: 75vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(28,75,145,0.3);
   img {
     width: 100%;
     position: absolute;
@@ -10,11 +16,6 @@
     z-index: -1;
     filter: brightness(0.5);
   }
-  height: 75vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   &__backdrop img {
     position: absolute;
@@ -51,12 +52,11 @@
         font-size: 18px;
         max-width: 300px;
       }
-
     }
 
     .search {
       display: flex;
-      
+
       input {
         flex: 1;
         padding: 20px 30px;
@@ -67,7 +67,7 @@
         font-size: 20px;
 
         @include sp {
-          font-size: 10px;  
+          font-size: 10px;
           // width: 150px;
         }
 

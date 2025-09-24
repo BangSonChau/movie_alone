@@ -51,7 +51,7 @@ function Header({ setIsHeaderActive }) {
 
         <ul className={`header__nav ${openMenu ? `mobileView` : ""}`}>
           <li>
-            <p>Movies</p>
+            <Link to={"/explore/movie"}>Movies</Link>
           </li>
           <li>
             <p>TV Shows</p>

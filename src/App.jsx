@@ -5,6 +5,7 @@ import {
 import Home from './page/home';
 import MovieDatail from "./page/movie-detail";
 import Search from "./page/search";
+import ExploreMovie from "./page/explore";
 
 
 function App() {
@@ -21,6 +22,10 @@ function App() {
     {
       path: "/search/:keyWord",
       element: <div><Search /></div>,
+    },
+    {
+      path: "/explore/movie",
+      element: <div><ExploreMovie /></div>,
     },
   ]);
 
