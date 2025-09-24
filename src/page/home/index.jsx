@@ -6,11 +6,11 @@ import HeroSection from "../../component/hero-section";
 
 function Home() {
   const [isHeaderActive, setIsHeaderActive] = useState(false);
-  
+
   return (
     <div>
-      <Header />
-      <HeroSection url="https://api.themoviedb.org/3/movie/upcoming?api_key=a10ee5569194b352bcca20840b7f8a32" />
+      <Header setIsHeaderActive={setIsHeaderActive} />
+      <HeroSection url="https://api.themoviedb.org/3/movie/upcoming?api_key=a10ee5569194b352bcca20840b7f8a32" disableInput={isHeaderActive} />
       <Container>
         <Carousel
           heading={"Trending"}

@@ -55,7 +55,7 @@ function HeroSection({ url, disableInput }) {
                 handleSearch();
               }
             }}
-            disabled={disableInput}
+            readOnly={disableInput}
           />
           <button onClick={() => handleSearch()}>Search</button>
         </div>
