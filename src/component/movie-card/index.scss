@@ -1,6 +1,8 @@
 @import "/src/mixin/index.scss";
 
 .movie-card {
+  text-decoration: none;
+
   &__tag {
     position: relative;
     margin-bottom: 30px;
