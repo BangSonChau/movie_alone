@@ -64,8 +64,7 @@ export default function Carousel({ heading, url }) {
               check={true}
             >
               <div className="genre-tag">
-                {movie.genre_ids
-                  .slice(0, 2)
+                {movie.genre_ids?.slice(0, 2)
                   .map((genre_id) =>
                     genreMovie
                       .filter((genres) => genres.id === genre_id)

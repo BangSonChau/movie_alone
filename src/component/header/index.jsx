@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
 import "./index.scss";
 import { BsSearch } from "react-icons/bs";
+import { HiOutlineBars4 } from "react-icons/hi2";
+import { AiOutlineClose } from "react-icons/ai";
+import { useState } from "react";
 function Header() {
+  const [open, setOpen] = useState(false);
+
+  const toggleMenu = () => setOpen((o) => !o);
+
   return (
     <div className="header__warrper">
       <div className="header">
@@ -11,7 +18,7 @@ function Header() {
             alt=""
           />
         </Link>
-        <ul className="header__nav">
+        <ul className={`header__nav ${open ? `mobileView` : ""}`}>
           <li>
             <p>Movies</p>
           </li>
@@ -22,6 +29,18 @@ function Header() {
             <BsSearch />
           </li>
         </ul>
+
+        <div className="header__mobile">
+          <BsSearch />
+          <div onClick={toggleMenu}>
+            {open ? (
+              <AiOutlineClose></AiOutlineClose>
+            ) : (
+              <HiOutlineBars4></HiOutlineBars4>
+            )}
+          </div>
+        </div>
+
       </div>
     </div>
   );

@@ -1,3 +1,5 @@
+@import "/src/mixin/index.scss";
+
 .header__warrper {
   background-color: rgba(0, 0, 0, 0.25);
   position: fixed;
@@ -12,7 +14,7 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-
+    position: relative;
     &__logo img {
       width: 180px;
       cursor: pointer;
@@ -36,6 +38,45 @@
           color: #da2f68;
           transition: 0.15s all ease;
         }
+      }
+
+      @include sp {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.25);
+        bottom: -100px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: start;
+        padding: 20px 20px;
+        transform: translateY(-200px);
+        li {
+          &:nth-child(3) {
+            display: none;
+          }
+        }
+        
+      }
+    }
+
+    .mobileView {
+      transform: translateY(10px);
+      transition: 0.15s all ease;
+    }
+
+    &__mobile {
+      display: flex;
+      color: #fff;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+
+      @include pc {
+        display: none;
+      }
+      @include tablet {
+        display: none;
       }
     }
   }
