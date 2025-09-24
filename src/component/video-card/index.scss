@@ -1,6 +1,9 @@
 @import "/src/mixin/index.scss";
 
-.video-card {
+a {
+  text-decoration: none;
+
+  .video-card {
   width: 300px;
   height: fit-content;
   cursor: pointer;
@@ -110,3 +113,6 @@
     }
   }
 }
+}
+
+
