@@ -49,6 +49,12 @@ function HeroSection({ url }) {
             placeholder="Search for a movie of tv show..."
             value={keyWord}
             onChange={(e) => setKeyWord(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                handleSearch();
+              }
+            }}
           />
           <button onClick={() => handleSearch()}>Search</button>
         </div>

@@ -80,6 +80,7 @@ function Header() {
             onChange={(e) => setKeyWord(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
+                e.preventDefault();
                 handleSearch();
               }
             }}
