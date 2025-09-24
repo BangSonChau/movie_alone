@@ -1,4 +1,10 @@
+@import "/src/mixin/index.scss";
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
+
+  @include sp {
+    margin: 0 30px;
+  }
 }
